@@ -1,0 +1,281 @@
+.product {
+	display: grid;
+	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestar] auto [end];
+
+	margin-bottom: 30px;
+	padding: 30px;
+}
+
+.logo {
+	grid-column: start / logoend;
+	grid-row: 1 / span 2;
+}
+
+.title,
+.tags {
+	grid-column: titlestart / middle;
+}
+
+.price,
+.priceTitle {
+	grid-column: pricestart / priceend;
+
+	white-space: nowrap;
+}
+
+.credit,
+.creditTitle {
+	grid-column: creditstart / creditend;
+}
+
+.rating,
+.rateTitle {
+	grid-column: ratestart / end;
+
+	white-space: nowrap;
+}
+
+.hr,
+.description,
+.actions {
+	grid-column: start / end;
+}
+
+.feature {
+	grid-column: start / middle;
+}
+
+.advBlock {
+	grid-column: middle / end;
+}
+
+.logo img {
+	border-radius: 5px;
+}
+
+.title {
+	align-self: flex-end;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
+}
+
+.price,
+.credit {
+	align-self: flex-end;
+
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 27px;
+}
+
+.description {
+	margin-bottom: 15px;
+
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.reviewButton {
+	margin-left: 20px;
+}
+
+.category {
+	margin-top: 7px;
+}
+
+.rating {
+	align-self: flex-end;
+}
+
+.priceTitle,
+.creditTitle,
+.rateTitle {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+}
+
+.month {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.oldPrice {
+	margin-left: 5px;
+}
+
+.advBlock {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.AdvantagesTitle {
+	margin-top: 5px;
+
+	font-weight: bold;
+}
+
+.disAdvantagesTitle {
+	font-weight: bold;
+}
+
+.advantages {
+	margin-bottom: 20px;
+	padding-left: 15px;
+
+	border-left: 2px solid var(--green);
+}
+
+.disAdvantages {
+	padding-left: 15px;
+
+	border-left: 2px solid var(--red);
+}
+
+.characteristics {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+
+	padding-right: 60px;
+
+	font-size: 16px;
+	line-height: 32px;
+	gap: 10px;
+}
+
+.characteristicsName {
+	font-weight: bold;
+}
+
+.characteristicsDots {
+	margin-bottom: 5px;
+
+	border-bottom: 1px dashed var(--gray-light);
+}
+.reviews {
+	overflow: hidden;
+	padding: 30px;
+}
+@media screen and (max-width: 1320px) {
+	.product {
+		grid-template-columns: 70px  30px  auto  40px  auto  40px  1fr;
+		grid-template-areas:
+			"logo . title title title title title"
+			"logo . tags tags tags tags tags"
+			"price price price . credit . rating"
+			"priceTitle priceTitle priceTitle . creditTitle . rateTitle"
+			"hr hr hr hr hr hr hr"
+			"description description description description description description description"
+			"feature feature feature feature feature feature feature "
+			"advBlock  advBlock advBlock advBlock advBlock advBlock advBlock"
+			"hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+			"actions actions actions actions actions actions actions";
+	}
+
+	.logo {
+		grid-area: logo;
+	}
+
+	.description {
+		grid-area: description;
+	}
+
+	.title {
+		grid-area: title;
+	}
+
+	.tags {
+		grid-area: tags;
+	}
+
+	.price {
+		grid-area: price;
+	}
+
+	.priceTitle {
+		grid-area: priceTitle;
+	}
+
+	.hr {
+		grid-area: hr;
+	}
+
+	.hr2 {
+		grid-area: hr2;
+	}
+
+	.creditTitle {
+		grid-area: creditTitle;
+
+		margin-bottom: 20px;
+	}
+
+	.actions {
+		grid-area: actions;
+	}
+
+	.rating {
+		grid-area: rating;
+	}
+
+	.advBlock {
+		grid-area: advBlock;
+	}
+
+	.rateTitle {
+		grid-area: rateTitle;
+	}
+
+	.credit {
+		grid-area: credit;
+	}
+
+	.feature {
+		grid-area: feature;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.product {
+		grid-template-columns: 70px  30px 1fr;
+		grid-template-areas:
+			"logo . title "
+			"logo . tags "
+			"priceTitle priceTitle price "
+			" creditTItle creditTItle credit"
+			"rateTitle rateTitle rating"
+			"hr hr hr"
+			"description description description "
+			"feature feature feature  "
+			"advBlock  advBlock advBlock "
+			"hr2 hr2 hr2"
+			"actions actions actions";
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.product {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"logo "
+			"title"
+			"tags"
+			"price"
+			"priceTitle"
+			" credit"
+			"creditTItle"
+			"rating"
+			"rateTitle"
+			"hr"
+			"description "
+			"feature "
+			"advBlock  "
+			"hr2"
+			"actions";
+	}
+}
+.rateTitle a {
+	color: var(--primary);
+}
