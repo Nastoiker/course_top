@@ -3,7 +3,6 @@ import StarIcon from './star.svg';
 import styles from './Rating.module.css'
 import cn from "classnames";
 import {useEffect, useState, KeyboardEvent, ForwardedRef, forwardRef, useRef} from "react";
-import {number} from "style-value-types";
 // eslint-disable-next-line react/display-name
 export const Rating = forwardRef(({ className, isEditable = false, rating, setRating, error, tabIndex, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element =>
 {
